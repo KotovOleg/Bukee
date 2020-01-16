@@ -1,0 +1,129 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+@import "vendor/libs";
+@import "base/fonts";
+@import "base/general";
+@import "../blocks/modules";
+$light-color:#fff;
+$accent-color:#65e496;
+h1,h2,h3,h4,p{
+    padding: 0;
+    margin: 0;
+}
+.body{
+    font-family: 'Roboto Slab', serif;
+  }
+.page-main{
+    background-image: url(../img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top:50px;
+}
+.wrap{
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1170px;
+    margin:0 auto;
+    margin-bottom: 178px;
+    &__logo{
+        display: block;
+        width:137px;
+        height: 28px;
+        background-image: url(../img/svg/Logo.svg);
+    }
+    &-list{
+        list-style-type: none;
+        display:flex;
+        justify-content: flex-end;
+        padding-top: 3px;
+        &__item{
+            margin-left:22px;
+            padding-bottom: 5px;
+            font-size: 17px; 
+            font-family: 'Open Sans', serif;
+            color:$light-color;
+            border-bottom: 3px solid transparent;    /*эффект анимации исчезновения*/
+            transition:0.5s;
+            }                                              /*время задержки эффекта анимации исчезновения*/
+            &:hover{                                 /*свойство при наведении мыши*/
+                border-bottom: 3px solid $accent-color;
+            }
+        &__item.active{
+            border-bottom: 3px solid $accent-color;
+        }
+        &__link{
+            color:$light-color;
+            text-decoration: none;
+        }
+    }
+}
+.block-text{
+    flex-basis: calc(93% - 500px);/*высчитываем размер второго блока*/
+    padding-top: 4px;
+    padding-left: 54px;
+    &__name{
+        font-family: 'Open Sans',serif;
+        font-size: 18px;
+        letter-spacing: 1px;
+        padding-bottom: 31px;
+        color:$light-color;
+    }
+    &__title{
+        font-family: 'Roboto Slab', serif;
+        font-size: 48px;
+        font-weight: 700;
+        color:$light-color;
+        letter-spacing: 3px;
+    }
+    span{
+        display: block;
+        color: #65e496;
+        font-size: 18px;
+        padding-bottom: 40px;
+        padding-top: 10px;
+        letter-spacing: 1px;
+    }
+    &__description{
+        font-size: 15px;
+        font-family: 'Open Sans',serif;
+        line-height: 25px;
+        letter-spacing: 0.75px;
+        padding-bottom: 23px;
+        color: #fff;
+    }
+    &__btn{
+        display:block;
+        background-color:$accent-color;
+        color:$light-color;
+        text-decoration: none;
+        max-width: 250px;
+        border-radius: 3px;
+        text-align:center;
+        font-size: 18px;
+        padding:14px 1px;
+        letter-spacing:1.5px;
+        margin-top: 24px;
+        margin-bottom: 21px;
+    }
+}    
+.block-book{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 0px;
+    &-demo{
+        display: block;
+        background-image: url(../img/book.svg);
+        width: 445px;
+        height: 638px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        flex-basis: 445px;              /*размер занимаемый блоком*/
+    }
+}
